@@ -7,7 +7,7 @@ const utils = (function () {
         localStorage.setItem(key, JSON.stringify(value));
     }
 
-    function printTodos() {
+    function print() {
         const toDoList = getItem('todos');
         const source = document.getElementById('source').innerHTML;
         const content = document.getElementById('dataContainer');
@@ -26,6 +26,6 @@ const utils = (function () {
     return {
         getItem,
         setItem,
-        printTodos
+        print: print
     }
 })();

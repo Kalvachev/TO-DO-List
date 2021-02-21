@@ -17,16 +17,30 @@ const userStorage = (function () {
             }
         }
 
-        add(todo, version) {
+        addItem(todo, version) {
             this.todos = utils.getItem('todos');
             this.todos.push(new Todo(todo, version));
             utils.setItem('todos', this.todos);
         }
 
-        remove(version) {
+        removeItem(version) {
             this.todos = utils.getItem('todos');
             this.todos = this.todos.filter(item => item.version === version);
             utils.setItem('todos', this.todos);
+        }
+
+        checkItem(version) {
+            this.todos.forEach(todo => {
+                if (todo.uuid === version) {
+                    if (todo.checked) {
+                        todo.checked = false;
+                    } else {
+                        todo.checked = true;
+                    }
+
+                    return utils.setItem('todos', this.todos);
+                }
+            });
         }
     }
 

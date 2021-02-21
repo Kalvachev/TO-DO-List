@@ -104,3 +104,11 @@ body {
 .fa-trash-alt:hover {
     color: rgb(173, 7, 7);
 }
+
+hr {
+    border: 1px double white;
+}
+
+.checked {
+    text-decoration: line-through;
+}
