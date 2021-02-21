@@ -1,0 +1,106 @@
+body {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+}
+
+#main {
+    width: 1505px;
+    margin: auto;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: rgb(143, 143, 143);
+    box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.45);
+}
+
+#title {
+    margin: 15px 0;
+    font-size: 50px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    text-shadow: 0px 0px 4px rgb(80, 80, 80);
+}
+
+#inputValue, button {
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+#inputValue {
+    width: 75%;
+}
+
+#submitButton {
+    color: white;
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+    width: 5%;
+}
+
+#submitButton:hover {
+    background-color: rgb(63, 63, 63);
+}
+
+#clearAllDataButton {
+    width: 7%;
+    color: white;
+    outline: none;
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+    margin: 10px auto;
+}
+
+#clearAllDataButton:hover {
+    background-color: rgb(51, 8, 0);
+}
+
+#table {
+    padding: 0;
+}
+
+#form {
+    margin: 20px 0;
+}
+
+.list-item {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+    padding: 3px 30px;
+    font-weight: bold;
+}
+
+.title-text {
+    display: inline;
+    margin: 0;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.title-text:hover {
+    color: rgb(255, 255, 255);
+}
+
+#informationMessage {
+    margin: 20px auto;
+    font-size: 24px;
+    text-shadow: 0px 0px 4px rgba(150, 150, 150, 1);
+}
+
+#dataContainer {
+    margin: 0 auto;
+    position: relative;
+}
+
+.fa-trash-alt {
+    color: rgb(236, 98, 98);
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.fa-trash-alt:hover {
+    color: rgb(173, 7, 7);
+}

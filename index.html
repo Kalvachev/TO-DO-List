@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO LIST</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <link rel="shortcut icon" href="./assets/images/icon.png" type="image/x-icon">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+        integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="main">
+        <h1 id="title">TO-DO LIST</h1>
+
+        <form action="" id="form">
+            <input type="text" placeholder="Title ..." id="inputValue">
+            <button id="submitButton">Add</button>
+        </form>
+
+        <div id="dataContainer"></div>
+
+        <button id="clearAllDataButton">Clear</button>
+    </div>
+
+    <script id="source" type="text/x-handlebars-template">
+            {{#if this}}
+            <ul id="table">
+                {{#each this}}
+                <li class="list-item" data-id="{{this.version}}">
+                    <p class="title-text">{{this.title}}</p>
+                    <i class="fas fa-trash-alt"></i>
+                </li>
+                <hr>
+                {{/each}}
+            </ul>
+            {{else}}
+            <h2 id="informationMessage">The list is empty</h2>
+            {{/if}}
+        </script>
+
+    <script src="./assets/js/constants.js"></script>
+    <script src="./assets/js/utils.js"></script>
+    <script src="./assets/js/toDoModel.js"></script>
+    <script src="./assets/js/toDoController.js"></script>
+</body>
+
+</html>
