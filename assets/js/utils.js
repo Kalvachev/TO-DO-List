@@ -8,7 +8,7 @@ const utils = (function () {
     }
 
     function print() {
-        const toDoList = getItem('todos');
+        const toDoList = getItem('lists');
         const source = document.getElementById('source').innerHTML;
         const content = document.getElementById('dataContainer');
         const template = Handlebars.compile(source);
@@ -26,6 +26,6 @@ const utils = (function () {
     return {
         getItem,
         setItem,
-        print: print
+        print
     }
 })();

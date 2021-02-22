@@ -1,5 +1,5 @@
 const userStorage = (function () {
-    class Todo {
+    class ToDo {
         constructor(title, version) {
             this.title = title;
             this.version = version;
@@ -7,42 +7,42 @@ const userStorage = (function () {
         }
     }
 
-    class UserStorage {
+    class UserConstructor {
         constructor() {
-            if (utils.getItem('todos')) {
-                this.todos = utils.getItem('todos');
+            if (utils.getItem('lists')) {
+                this.todos = utils.getItem('lists');
             } else {
                 this.todos = [];
-                utils.setItem('todos', this.todos);
+                utils.setItem('lists', this.todos);
             }
         }
 
         addItem(todo, version) {
-            this.todos = utils.getItem('todos');
-            this.todos.push(new Todo(todo, version));
-            utils.setItem('todos', this.todos);
+            this.todos = utils.getItem('lists');
+            this.todos.push(new ToDo(todo, version));
+            utils.setItem('lists', this.todos);
         }
 
         removeItem(version) {
-            this.todos = utils.getItem('todos');
+            this.todos = utils.getItem('lists');
             this.todos = this.todos.filter(item => item.version === version);
-            utils.setItem('todos', this.todos);
+            utils.setItem('lists', this.todos);
         }
 
         checkItem(version) {
             this.todos.forEach(todo => {
-                if (todo.uuid === version) {
+                if (todo.version === version) {
                     if (todo.checked) {
                         todo.checked = false;
                     } else {
                         todo.checked = true;
                     }
 
-                    return utils.setItem('todos', this.todos);
+                    return utils.setItem('lists', this.todos);
                 }
             });
         }
     }
 
-    return new UserStorage();
+    return new UserConstructor();
 })();

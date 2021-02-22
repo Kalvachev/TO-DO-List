@@ -1,5 +1,5 @@
-const INPUT = document.getElementById('inputValue');
 const SUBMIT_BUTTON = document.getElementById('submitButton');
 const CLEAR_BUTTON = document.getElementById('clearAllDataButton');
+const INPUT = document.getElementById('inputValue');
 const RECYCLE_BINS = document.getElementsByClassName('fa-trash-alt');
-const CONTENT = document.getElementById('dataContainer');
+const DATA_CONTAINER = document.getElementById('dataContainer');
